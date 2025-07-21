@@ -50,6 +50,23 @@ tl.to(".logo", {y: 0, opacity: 1, duration: 2, ease: "power1.inOut"})
   markers: false
 });
 
+/*const tlFade = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".steps-section",
+        start: "top+=10px bottom",
+        scrub: 1,
+        pin: '.fade-on-scroll',
+        pinSpacing: false,
+        markers: true
+    }
+});
+tlFade.to(".fade-on-scroll", {
+    scale: 1.5,
+    ease: 'power1.in'
+});
+*/
+
+
 let tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".steps-section",

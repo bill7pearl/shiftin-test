@@ -717,8 +717,7 @@ footer {
 }
 
 .fade-on-scroll {
-    position: fixed;
-    will-change: opacity;
+    opacity: 1;
 }
 
 /* Mobile Responsive Styles */
