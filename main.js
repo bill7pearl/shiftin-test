@@ -6,11 +6,9 @@ tailwind.config = {
     }
 }
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 let tl = gsap.timeline();
 
@@ -66,7 +64,6 @@ tlFade.to(".fade-on-scroll", {
 });
 */
 
-
 let tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".steps-section",
@@ -81,29 +78,26 @@ tl2.to([".lanterns", ".logo"], {
   ease: "power1.out",
   })
 
+const path = document.getElementById('Path_170');
+const hoverText = document.querySelector('.hover-text');
+const mapContainer = document.querySelector('.map-container');
 
-
-    const path = document.getElementById('Path_170');
-    const hoverText = document.querySelector('.hover-text');
-    const mapContainer = document.querySelector('.map-container');
-
-    path.addEventListener('mouseenter', () => {
-        path.style.fill = 'red';
-        hoverText.style.display = 'block';
+path.addEventListener('mouseenter', () => {
+    path.style.fill = 'red';
+    hoverText.style.display = 'block';
     });
 
-    mapContainer.addEventListener('mousemove', (e) => {
-        if (hoverText.style.display === 'block') {
-            const rect = mapContainer.getBoundingClientRect();
-            const hoverRect = hoverText.getBoundingClientRect();
-            hoverText.style.left = (e.clientX - rect.left - hoverRect.width/2) + 'px';
-            hoverText.style.top = (e.clientY - rect.top - hoverRect.height - 10) + 'px';
+mapContainer.addEventListener('mousemove', (e) => {
+    if (hoverText.style.display === 'block') {
+        const rect = mapContainer.getBoundingClientRect();
+        const hoverRect = hoverText.getBoundingClientRect();
+        hoverText.style.left = (e.clientX - rect.left - hoverRect.width/2) + 'px';
+        hoverText.style.top = (e.clientY - rect.top - hoverRect.height - 10) + 'px';
         }
     });
 
-    path.addEventListener('mouseleave', () => {
-        path.style.fill = '';
-        hoverText.style.display = 'none';
+ path.addEventListener('mouseleave', () => {
+    path.style.fill = '';
+    hoverText.style.display = 'none';
     });
 });
-
